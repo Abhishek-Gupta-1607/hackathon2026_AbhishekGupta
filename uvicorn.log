@@ -72,3 +72,9 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
 INFO:     127.0.0.1:52037 - "POST /process_ticket HTTP/1.1" 200 OK
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+INFO:     127.0.0.1:52243 - "POST /process_ticket HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [8066]
