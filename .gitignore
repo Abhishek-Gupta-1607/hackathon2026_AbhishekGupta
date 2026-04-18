@@ -1,0 +1,19 @@
+# Environments
+.env
+
+# Logs and Data
+logs/
+data/tickets.json
+faiss_index/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Streamlit
+.streamlit/
+
+# OS Files
+.DS_Store
