@@ -3,20 +3,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# We are hardcoding the API key as requested to bypass Streamlit Cloud Configuration issues and guarantee it works.
-API_KEY_HACKATHON = "AIzaSyBEdjlS6Y1RfJCwlb7T7SZ8qA1TD7tFU0Y"
-
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") 
+# First check standard environment variables (local .env or Streamlit Cloud Secrets)
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 if not GEMINI_API_KEY:
     try:
         import streamlit as st
-        GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY", API_KEY_HACKATHON)
+        # Fallback to Streamlit secrets dict if os.getenv fails to catch it
+        GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY", "")
     except Exception:
-        GEMINI_API_KEY = API_KEY_HACKATHON
-
-if not GEMINI_API_KEY:
-    GEMINI_API_KEY = API_KEY_HACKATHON
+        pass
 
 # The model to use for Gemini API
 MODEL_NAME = "gemini-1.5-pro"
